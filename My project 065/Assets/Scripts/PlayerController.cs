@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
             if(animator!=null)
             {
-                animator.SetTrigger("jumpTrigger");
+                animator.SetTrigger("jumptrigger");
             }
         }
         if (!isGrounded)
