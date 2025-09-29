@@ -117,6 +117,9 @@ public class InteractableObject : MonoBehaviour
             case InteractionType.Collectible:
                 CollectItem();
                 break;
+            case InteractionType.NPC:
+                TalkToNPC();
+                break;
         }
     }
     public string GetInteractionText()
