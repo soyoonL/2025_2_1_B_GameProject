@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("커포넌트")]
     public Animator animator;
+    public GameObject effectPos;
 
     private CharacterController controller;
     private Camera playerCamera;
@@ -132,6 +133,8 @@ public class PlayerController : MonoBehaviour
             {
                 isLanding = true;
                 landingTimer = landingDuration;
+
+                EffectManager.Instance.PlayEffect("점프", transform.position);
             }
         }
     }
@@ -187,6 +190,7 @@ public class PlayerController : MonoBehaviour
             if (animator != null)
             {
                 animator.SetTrigger("attackTrigger");
+                EffectManager.Instance.PlayEffectWithDelay("공격", effectPos.transform.position, Quaternion.identity, 0.5f, 1.0f);
             }
         }
     }
